@@ -340,7 +340,7 @@ storage:
 # ai_analysis 和 ai_translation 共用此模型配置
 # 基于 LiteLLM 统一接口，支持 100+ AI 提供商
 # ===============================================================
-ai: deepseek/deepseek-chat (DeepSeek)
+ai: 
   # LiteLLM 模型格式: provider/model_name
   # 示例:
   #   - deepseek/deepseek-chat (DeepSeek)
@@ -353,12 +353,10 @@ ai: deepseek/deepseek-chat (DeepSeek)
   
   model: "deepseek/deepseek-chat"
 
-  api_key: " ${{ secrets.DEEPSEEK_API_KEY }}"                       # API Key（建议使用环境变量 AI_API_KEY）
+  api_key: ""                       # API Key（建议使用环境变量 AI_API_KEY）
 
-env:
-  DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
   
-  api_base: "https://api.deepseek.com"                      # 自定义 API 端点（可选，大多数情况留空）
+  api_base: ""                      # 自定义 API 端点（可选，大多数情况留空）
                                     # 示例: https://api.openai.com/v1（自建代理或兼容接口）
                                     #
                                     # 💡 超级重要：连接任意兼容 OpenAI 协议的模型商
